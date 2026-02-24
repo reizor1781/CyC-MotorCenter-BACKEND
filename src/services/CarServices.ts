@@ -26,4 +26,7 @@ export class CarService {
     async delete(id: number) {
         return await this.carRepository.delete(id);
     }
+    async findByPlaca(placa: string) {
+        return await this.carRepository.findByPlaca(placa);
+    }
 }
