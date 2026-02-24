@@ -16,4 +16,7 @@ export class CarRepository {
     async delete(id: number) {
         return await Car.destroy({ where: { id } });
     }
+    async findByPlaca(placa: string) {
+        return await Car.findOne({ where: { placa } });
+    }
 }
