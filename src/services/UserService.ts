@@ -9,6 +9,7 @@ export class UserService {
 
     async create(user: any) {
         const existingUser = await this.userRepository.findByCedula(user.cedula);
+        
         if (existingUser) {
             throw new Error('User already exists');
         }
@@ -27,5 +28,8 @@ export class UserService {
     }
     async delete(id: number) {
         return await this.userRepository.delete(id);
+    }
+    async findByCedula(cedula: string) {
+        return await this.userRepository.findByCedula(cedula);
     }
 }
