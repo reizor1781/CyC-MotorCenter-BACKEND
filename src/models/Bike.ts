@@ -9,6 +9,7 @@ class Bike extends Model {
     public placa!: string;
     public color!: string;
     public precio!: number;
+    public photoUrl!: string;
 }
 
 Bike.init(
@@ -42,6 +43,10 @@ Bike.init(
         precio: {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
+        },
+        photoUrl: {
+            type: DataTypes.STRING,
+            allowNull: true,
         },
     },
     {

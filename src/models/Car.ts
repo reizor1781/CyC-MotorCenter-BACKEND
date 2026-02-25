@@ -9,6 +9,7 @@ class Car extends Model {
     public placa!: string;
     public color!: string;
     public precio!: number;
+    public photoUrl!: string;
 }
 
 Car.init(
@@ -46,6 +47,10 @@ Car.init(
         employeeId: {
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        photoUrl: {
+            type: DataTypes.STRING,
+            allowNull: true,
         },
     },
     {
