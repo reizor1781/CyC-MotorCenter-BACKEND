@@ -7,6 +7,9 @@ export const createBike = async (req: Request, res: Response) => {
     try {
         const bike = await bikeService.create(req.body);
         res.json(bike);
+        if (req.file) {
+            bike.photoUrl = `/uploads/${req.file.filename}`;
+        }
     } catch (error: any) {
         res.status(400).json({ message: error.message });
     }

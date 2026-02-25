@@ -11,10 +11,10 @@ const router = Router();
 router.post('/login', login);
 
 router.get('/users', authMiddleware, findAllUsers);
-router.post('/users', authMiddleware, upload.single('photo'), createUser);
+router.post('/users', createUser);
 router.get('/users/:id', authMiddleware, findUserById);
 router.get('/users/cedula/:cedula', authMiddleware, findUserByCedula);
-router.put('/users/:id', authMiddleware, upload.single('photo'), updateUser);
+router.put('/users/:id', authMiddleware, updateUser);
 router.delete('/users/:id', authMiddleware, deleteUser);
 
 router.get('/cars', authMiddleware, findAllCars);
