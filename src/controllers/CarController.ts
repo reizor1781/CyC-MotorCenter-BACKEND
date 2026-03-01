@@ -36,9 +36,9 @@ export const findCarById = async (req: Request, res: Response) => {
     }
 };
 
-export const findCarByPlaca = async (req: Request, res: Response) => {
+export const findCarByPlate = async (req: Request, res: Response) => {
     try {
-        const car = await carService.findByPlaca(req.params.placa.toString());
+        const car = await carService.findByPlate(req.params.plate.toString());
         if (!car) {
             return res.status(404).json({ message: 'Car not found' });
         }

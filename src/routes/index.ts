@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { login } from '../controllers/AuthController';
 import { createUser, findAllUsers, findUserById, findUserByCedula, updateUser, deleteUser } from '../controllers/UserController';
-import { createCar, findAllCars, findCarById, findCarByPlaca, updateCar, deleteCar } from '../controllers/CarController';
+import { createCar, findAllCars, findCarById, findCarByPlate, updateCar, deleteCar } from '../controllers/CarController';
 import { createBike, findAllBikes, findBikeById, findBikeByPlaca, updateBike, deleteBike } from '../controllers/BikeController';
 import { authMiddleware } from '../middleware/auth';
 import { upload } from '../utils/fileUpload';
@@ -20,7 +20,7 @@ router.delete('/users/:id', authMiddleware, deleteUser);
 router.get('/cars', authMiddleware, findAllCars);
 router.post('/cars', authMiddleware, upload.single('photo'), createCar);
 router.get('/cars/:id', authMiddleware, findCarById);
-router.get('/cars/placa/:placa', authMiddleware, findCarByPlaca);
+router.get('/cars/plate/:plate', authMiddleware, findCarByPlate);
 router.put('/cars/:id', authMiddleware, upload.single('photo'), updateCar);
 router.delete('/cars/:id', authMiddleware, deleteCar);
 

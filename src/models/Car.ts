@@ -6,7 +6,7 @@ class Car extends Model {
     public marca!: string;
     public modelo!: string;
     public year!: number;
-    public placa!: string;
+    public plate!: string;
     public color!: string;
     public precio!: number;
     public photoUrl!: string;
