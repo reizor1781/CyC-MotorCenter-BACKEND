@@ -8,7 +8,7 @@ export class CarService {
     }
 
     async create(car: any) {
-        const existingCar = await this.carRepository.findByPlaca(car.placa);
+        const existingCar = await this.carRepository.findByPlate(car.plate);
         if (existingCar) {
             throw new Error('Car already exists');
         }
@@ -26,7 +26,7 @@ export class CarService {
     async delete(id: number) {
         return await this.carRepository.delete(id);
     }
-    async findByPlaca(placa: string) {
-        return await this.carRepository.findByPlaca(placa);
+    async findByPlate(plate: string) {
+        return await this.carRepository.findByPlate(plate);
     }
 }
